@@ -6,7 +6,6 @@ if (isset($_POST['logout'])) {
     session_destroy();
     header('location: login.php');
     exit();
-    
 }
 ?>
 
@@ -42,6 +41,7 @@ if (isset($_POST['logout'])) {
                 <li> <a href="#home">Home</a></li>
                 <li> <a href="#Find">Explain </a></li>
                 <li> <a href="#figure">History </a></li>
+
                 <li>
                     <form action="logout.php" method="POST">
                         <button type="submit" name="logout">Logout</button>
@@ -55,6 +55,7 @@ if (isset($_POST['logout'])) {
                 <li><a href="#Find" id="search"><i data-feather="search"></i></a></li>
                 <li><a href="#figure" id="user"><i data-feather="user"></i></a></li>
                 <li><a href="#menu" id="hamburger-menu"><i data-feather="menu"></i></a></li>
+                <li><a href="next.php" id="next"><i data-feather="arrow-up-right"></i></a></li>
 
             </ul>
         </nav>
@@ -99,8 +100,12 @@ if (isset($_POST['logout'])) {
 
             Konsep blockchain muncul pada 1991, ketika Stuart Haber dan W. Scott Stornetta menerbitkan jurnal *Journal of Cryptography: How to Time Stamp a Digital Document*. </br> </br>
 
-            Blockchain pertama kali digunakan untuk Bitcoin pada 2009 oleh Satoshi Nakamoto. Tidak seperti uang tradisional yang dikendalikan bank sentral, Bitcoin beroperasi tanpa otoritas pusat. Sebagai gantinya, transaksi diverifikasi melalui jaringan *peer-to-peer*.
+            Blockchain pertama kali digunakan untuk Bitcoin pada 2009 oleh Satoshi Nakamoto. Tidak seperti uang tradisional yang dikendalikan bank sentral, Bitcoin beroperasi tanpa otoritas pusat.
+            Sebagai gantinya, transaksi diverifikasi melalui jaringan *peer-to-peer*.
+
+
         </p>
+
         <div>
             <a href="#">
 
@@ -114,8 +119,78 @@ if (isset($_POST['logout'])) {
             </a>
         </div>
     </div>
+    <!--Style untuk canva-->
+    <style>
+        .canva-container {
+            z-index: 1003;
+            position: absolute;
+            width: 100%;
+            height: 0;
+            padding-top: 23.1481%;
+            box-shadow: 0 2px 8px 0 rgba(63, 69, 81, 0.16);
+            margin-top: 175vh;
+            margin-bottom: 0.9em;
+            overflow: hidden;
+            border-radius: 8px;
+            will-change: transform;
+        }
+
+        .canva-container iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .canv {
+            position: absolute;
+            z-index: 1003;
+            display: none;
+            width: 170%;
+            margin-top: 191vh;
+        }
+
+        .canv img {
+            height: 50%;
+            width: 100%;
+        }
+
+        /* Menyembunyikan .canva-container dan menampilkan .canv khusus untuk iPhone XR */
+        @media (max-width: 414px) and (max-height: 896px) {
+            .canva-container {
+                display: none !important;
+            }
+
+            .canv {
+                display: block !important;
+            }
+        }
+    </style>
+
+    <div class="canva-container">
+        <iframe loading="lazy"
+            src="https://www.canva.com/design/DAGi4-eT7Og/ftr5bjIKNjG1KwbGL0HH4g/view?embed"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <div class="canv">
+        <img src="konten/xr.png">
+    </div>
+
+    <a href="https://www.canva.com/design/DAGi4-eT7Og/ftr5bjIKNjG1KwbGL0HH4g/view?utm_content=DAGi4-eT7Og&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link"
+        target="_blank" rel="noopener">
+
+    </a>
 
 
+
+
+    <!--Function script-->
     <script>
         feather.replace();
     </script>
